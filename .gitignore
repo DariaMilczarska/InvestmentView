@@ -1,0 +1,11 @@
+
+*.sln
+InvestmentApp/.vs/InvestmentApp/v16/.suo
+*.config
+*.csproj
+*.cache
+InvestmentApp/InvestmentLibrary/Properties/AssemblyInfo.cs
+InvestmentApp/InvestmentLibrary/Properties/Settings.Designer.cs
+*.settings
+InvestmentApp/InvestmentLibrary/Properties/Resources.Designer.cs
+InvestmentApp/InvestmentLibrary/obj/Debug/.NETFramework,Version=v4.7.2.AssemblyAttributes.cs
