@@ -9,3 +9,15 @@ InvestmentApp/InvestmentLibrary/Properties/Settings.Designer.cs
 *.settings
 InvestmentApp/InvestmentLibrary/Properties/Resources.Designer.cs
 InvestmentApp/InvestmentLibrary/obj/Debug/.NETFramework,Version=v4.7.2.AssemblyAttributes.cs
+*.dll
+*.xml
+*.pdb
+*.exe
+*.CopyComplete
+*.txt
+*.resources
+*.lref
+*.baml
+*.p7s
+*.nupkg
+*._
