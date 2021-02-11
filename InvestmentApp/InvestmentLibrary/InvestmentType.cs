@@ -10,5 +10,10 @@ namespace InvestmentLibrary
     {
         public int idInvestmentType { get; set; }
         public String invName { get; set; }
+        public InvestmentType(String invName)
+        {
+            this.invName = invName;
+            this.idInvestmentType = 0;
+        }
     }
 }

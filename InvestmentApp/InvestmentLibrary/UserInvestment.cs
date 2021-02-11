@@ -9,10 +9,19 @@ namespace InvestmentLibrary
     class UserInvestment
     {
         public int idUserInvestment { get; set; }
-        public int idUser { get; set; }
-        public int idInvestment { get; set; }
+        public User user { get; set; }
+        public Investment investment { get; set; }
         public DateTime datePurchased { get; set; }
-        public decimal valuePurchased { get; set; }
-        public decimal difference { get; set; }
+        public double valuePurchased { get; set; }
+        public double difference { get; set; }
+
+        public UserInvestment(User user, Investment investment, DateTime datePurchased, double value, double diff)
+        {
+            this.user = user;
+            this.investment = investment;
+            this.datePurchased = datePurchased;
+            this.valuePurchased = value;
+            this.difference = diff;
+        }
     }
 }
