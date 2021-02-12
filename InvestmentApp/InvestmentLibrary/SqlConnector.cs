@@ -27,9 +27,10 @@ namespace InvestmentLibrary
             {
                 var p = new DynamicParameters();
                 p.Add("idInvType", investment.investmentType.idInvestmentType);
+                p.Add("currency", investment.currency.idCurrency);
                 p.Add("val", investment.value);
                 p.Add("invName", investment.invName);
-                p.Add("dataS", investment.dataSource);
+                p.Add("dataS", investment.dataSource);        
                 p.Add("id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
 
                 connection.Execute("addInvestment", p, commandType: CommandType.StoredProcedure);
@@ -78,6 +79,8 @@ namespace InvestmentLibrary
                 p.Add("idInvestment", userInvestment.investment.idInvestment);
                 p.Add("datePurchased", userInvestment.datePurchased);
                 p.Add("valPurchased", userInvestment.valuePurchased);
+                p.Add("amount", userInvestment.amount);
+                p.Add("valPLN", userInvestment.valuePLN);
                 p.Add("id", 0, DbType.Int32, ParameterDirection.Output);
 
                 connection.Execute("addUserInvestment", p, commandType: CommandType.StoredProcedure);
@@ -87,6 +90,22 @@ namespace InvestmentLibrary
             }
         }
 
+        public static Currency AddCurrency(Currency currency)
+        {
+            using (IDbConnection connection = new MySqlConnection(GetConnectionString(connectionName)))
+            {
+                var p = new DynamicParameters();
+                p.Add("short", currency.Shorthand);
+                p.Add("val", currency.value);
+                p.Add("dataSource", currency.dataSource);
+                p.Add("id", 0, DbType.Int32, ParameterDirection.Output);
+
+                connection.Execute("addCurrency", p, commandType: CommandType.StoredProcedure);
+                currency.idCurrency = p.Get<int>("id");
+
+                return currency;
+            }
+        }
         public static void EditInvestmentValue(Investment inv)
         {
             using (IDbConnection connection = new MySqlConnection(GetConnectionString(connectionName)))
@@ -108,6 +127,46 @@ namespace InvestmentLibrary
                 p.Add("investmentID", ui.investment.idInvestment);
 
                 connection.Execute("updateDifference", p, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public static List<InvestmentType> GetInvestmentType_All()
+        {
+            using (IDbConnection connection = new MySqlConnection(GetConnectionString(connectionName)))
+            {
+                return connection.Query<InvestmentType>("GetInvestmentTypes_All").ToList();
+            }
+        }
+
+        public static List<Investment> GetInvestment_All()
+        {
+            using (IDbConnection connection = new MySqlConnection(GetConnectionString(connectionName)))
+            {
+                return connection.Query<Investment>("GetInvestment_All").ToList();
+            }
+        }
+
+        public static List<Currency> GetCurrency_All()
+        {
+            using (IDbConnection connection = new MySqlConnection(GetConnectionString(connectionName)))
+            {
+                return connection.Query<Currency>("GetCurrency_All").ToList();
+            }
+        }
+
+        public static User GetUser()
+        {
+            using (IDbConnection connection = new MySqlConnection(GetConnectionString(connectionName)))
+            {
+                return connection.Query<User>("SELECT * FROM User").ToList()[0];
+            }
+        }
+
+        public static List<InvestmentView> GetInvestmentView_All()
+        {
+            using (IDbConnection connection = new MySqlConnection(GetConnectionString(connectionName)))
+            {
+                return connection.Query<InvestmentView>("SELECT * FROM fullinvestment_view").ToList();
             }
         }
     }

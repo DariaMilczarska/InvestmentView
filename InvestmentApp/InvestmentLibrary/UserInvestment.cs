@@ -14,14 +14,22 @@ namespace InvestmentLibrary
         public DateTime datePurchased { get; set; }
         public double valuePurchased { get; set; }
         public double difference { get; set; }
+        public double amount { get; set; } = 0;
+        public double valuePLN { get; set; } = 0;
 
-        public UserInvestment(User user, Investment investment, DateTime datePurchased, double value, double diff)
+        //public UserInvestment(User user, Investment investment, DateTime datePurchased, double value, double diff)
+        //{
+        //    this.user = user;
+        //    this.investment = investment;
+        //    this.datePurchased = datePurchased;
+        //    this.valuePurchased = value;
+        //    this.difference = diff;
+        //}
+
+        public UserInvestment()
         {
-            this.user = user;
-            this.investment = investment;
-            this.datePurchased = datePurchased;
-            this.valuePurchased = value;
-            this.difference = diff;
+            this.idUserInvestment = 6;
+            this.difference = 0;
         }
     }
 }

@@ -21,3 +21,10 @@ InvestmentApp/InvestmentLibrary/obj/Debug/.NETFramework,Version=v4.7.2.AssemblyA
 *.p7s
 *.nupkg
 *._
+*.props
+*.targets
+*.cfg
+*.png
+*.pri
+*.xaml
+InvestmentApp/InvestmentLibrary/obj/Debug/Panels.g.i.cs

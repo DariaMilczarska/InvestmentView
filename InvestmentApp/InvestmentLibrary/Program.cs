@@ -16,7 +16,7 @@ namespace InvestmentLibrary
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InvestmentWindow());
+            Application.Run(new MainWindow());
         }
     }
 }

@@ -15,5 +15,10 @@ namespace InvestmentLibrary
             this.invName = invName;
             this.idInvestmentType = 0;
         }
+
+        public InvestmentType()
+        {
+            this.idInvestmentType = 0;
+        }
     }
 }

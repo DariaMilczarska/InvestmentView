@@ -12,10 +12,8 @@ namespace InvestmentLibrary
         public String login { get; set; } = null;
         public String password { get; set; } = null;
 
-        public User(String login, String password)
+        public User()
         {
-            this.login = login;
-            this.password = password;
             this.idUser = 0;
         }
     }

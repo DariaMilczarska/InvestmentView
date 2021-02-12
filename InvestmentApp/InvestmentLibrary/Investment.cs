@@ -14,13 +14,18 @@ namespace InvestmentLibrary
         public double value { get; set; }
         public String invName { get; set; }
         public String dataSource { get; set; } = null;
+        public Currency currency { get; set; }
 
-        public Investment(InvestmentType investmentType, double value, String invName, String dataSource)
+        //public Investment(InvestmentType investmentType, double value, String invName, String dataSource)
+        //{
+        //    this.investmentType = investmentType;
+        //    this.value = value;
+        //    this.invName = invName;
+        //    this.dataSource = dataSource;
+        //    this.idInvestment = 0;
+        //}
+        public Investment()
         {
-            this.investmentType = investmentType;
-            this.value = value;
-            this.invName = invName;
-            this.dataSource = dataSource;
             this.idInvestment = 0;
         }
         public void InitializeValue()
