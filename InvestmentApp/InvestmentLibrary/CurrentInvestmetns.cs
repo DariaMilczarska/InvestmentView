@@ -12,10 +12,12 @@ namespace InvestmentLibrary
 {
     public partial class CurrentInvestmetns : Form
     {
-        public CurrentInvestmetns()
+        readonly User user;
+        public CurrentInvestmetns(User u)
         {
             InitializeComponent();
-            this.dataGridView.DataSource = SqlConnector.GetInvestmentView_All();
+            this.CurrentInvestmentsDataGridView.DataSource = SqlConnector.GetInvestmentView_All();
+            this.user = u;
         }
 
         private void InvestmentsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -25,7 +27,10 @@ namespace InvestmentLibrary
 
         private void WithdrawalButton_Click(object sender, EventArgs e)
         {
-
+            String name = (String) this.CurrentInvestmentsDataGridView.CurrentRow.Cells["InvestitionName"].Value;
+            Investment selectedInvestment = SqlConnector.GetInvestment(name);
+            UserInvestment ui = SqlConnector.GetUserInvestment(user.idUser, selectedInvestment.IdInvestment);
+            SqlConnector.FinishInvestment(ui.IdUserInvestment);
         }
     }
 }

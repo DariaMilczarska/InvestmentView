@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InvestmentLibrary
 {
-    class User
+    public class User
     {
         public int idUser { get; set; }
         public String login { get; set; } = null;

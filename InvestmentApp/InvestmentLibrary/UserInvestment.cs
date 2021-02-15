@@ -8,28 +8,20 @@ namespace InvestmentLibrary
 {
     class UserInvestment
     {
-        public int idUserInvestment { get; set; }
-        public User user { get; set; }
-        public Investment investment { get; set; }
-        public DateTime datePurchased { get; set; }
-        public double valuePurchased { get; set; }
-        public double difference { get; set; }
-        public double amount { get; set; } = 0;
-        public double valuePLN { get; set; } = 0;
-
-        //public UserInvestment(User user, Investment investment, DateTime datePurchased, double value, double diff)
-        //{
-        //    this.user = user;
-        //    this.investment = investment;
-        //    this.datePurchased = datePurchased;
-        //    this.valuePurchased = value;
-        //    this.difference = diff;
-        //}
+        public int IdUserInvestment { get; set; }
+        public int idUser { get; set; }
+        public int IdInvestment { get; set; }
+        public DateTime DatePurchased { get; set; }
+        public double ValuePurchased { get; set; }
+        public double Amount { get; set; }
+        public double ValuePLN { get; set; }
+        public double Difference { get; set; }     
+        public double DifferenceInP { get; set; } = 0;
 
         public UserInvestment()
         {
-            this.idUserInvestment = 6;
-            this.difference = 0;
+            this.IdUserInvestment = 6;
+            this.Difference = 0;
         }
     }
 }

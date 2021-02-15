@@ -43,11 +43,10 @@ namespace InvestmentLibrary
             // 
             this.MainPanel.AutoSize = true;
             this.MainPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.MainPanel.Location = new System.Drawing.Point(1, 117);
+            this.MainPanel.Location = new System.Drawing.Point(12, 121);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(0, 0);
             this.MainPanel.TabIndex = 0;
-            this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
             // 
             // OutcomeValueLabel
             // 
@@ -103,6 +102,7 @@ namespace InvestmentLibrary
             this.HistoryOfInvestments.TabIndex = 15;
             this.HistoryOfInvestments.Text = "History";
             this.HistoryOfInvestments.UseVisualStyleBackColor = true;
+            this.HistoryOfInvestments.Click += new System.EventHandler(this.HistoryOfInvestments_Click);
             // 
             // MyInvestmentBurron
             // 

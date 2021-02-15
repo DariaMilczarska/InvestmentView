@@ -12,13 +12,15 @@ namespace InvestmentLibrary
 {
     public partial class InvestmentWindow : Form
     {
-        List<InvestmentType> availableInvestmentTypes = SqlConnector.GetInvestmentType_All();
-        List<Investment> availableInvestments = SqlConnector.GetInvestment_All();
-        List<Currency> availableCurrencies = SqlConnector.GetCurrency_All();
-        public InvestmentWindow()
+        readonly List<InvestmentType> availableInvestmentTypes = SqlConnector.GetInvestmentType_All();
+        readonly List<Investment> availableInvestments = SqlConnector.GetInvestment_All();
+        readonly List<Currency> availableCurrencies = SqlConnector.GetCurrency_All();
+        readonly User user;
+        public InvestmentWindow(User user)
         {
             InitializeComponent();
             InitializeLists();
+            this.user = user;
         }
 
         private void InitializeLists()
@@ -42,13 +44,16 @@ namespace InvestmentLibrary
             {
                 try
                 {
-                    InvestmentType type = new InvestmentType();
-                    type.invName = this.TypeNameTextBox.Text;
+                    InvestmentType type = new InvestmentType()
+                    {
+                        InvName = this.TypeNameTextBox.Text
+                    };             
+
                     type = SqlConnector.CreateInvestmentType(type);
                     availableInvestmentTypes.Add(type);
                     InitializeLists();
                 }
-                catch (MySql.Data.MySqlClient.MySqlException exception)
+                catch (MySql.Data.MySqlClient.MySqlException)
                 {
                     MessageBox.Show("This investemnt type already exists", "Duplicate error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -78,10 +83,13 @@ namespace InvestmentLibrary
                 try
                 {
                     Investment investment = new Investment();
-                    investment.invName = this.NameTextBox.Text;
-                    investment.investmentType = (InvestmentType)this.InvestemntTypeComboBox.SelectedItem;
-                    investment.dataSource = this.DataSourceTextBox.Text;
-                    investment.currency = (Currency)this.CurrencyComboBox.SelectedItem;
+                    investment.InvName = this.NameTextBox.Text;
+                    InvestmentType t = (InvestmentType)this.InvestemntTypeComboBox.SelectedItem;
+                    investment.IdInvestmentType = t.IdInvestmentType;
+                    investment.DataSource = this.DataSourceTextBox.Text;
+                    Currency c = (Currency)this.CurrencyComboBox.SelectedItem;
+                    investment.IdCurrency = c.IdCurrency;
+
                     investment.InitializeValue();
                     investment = SqlConnector.CreateInvestment(investment);
                     availableInvestments.Add(investment);
@@ -130,9 +138,12 @@ namespace InvestmentLibrary
             {
                 try
                 {
-                    Currency c = new Currency();
-                    c.Shorthand = this.CurrencyShortcutTextBox.Text;
-                    c.dataSource = this.CurrencyDataSourceTextBox.Text;
+                    Currency c = new Currency()
+                    {
+                        Shorthand = this.CurrencyShortcutTextBox.Text,
+                        DataSource = this.CurrencyDataSourceTextBox.Text
+                    };
+                    
                     c.InitializeValue();
                     c = SqlConnector.AddCurrency(c);
                     this.availableCurrencies.Add(c);
@@ -173,12 +184,13 @@ namespace InvestmentLibrary
                 try
                 {
                     UserInvestment ui = new UserInvestment();
-                    ui.investment = (Investment)this.NameComboBox.SelectedItem;
-                    ui.user = SqlConnector.GetUser();
-                    ui.valuePLN = Double.Parse(this.InvValueTextBox.Text);
-                    ui.valuePurchased = Double.Parse(this.RateTextBox.Text);
-                    ui.amount = Double.Parse(this.AmountTextBox.Text);
-                    ui.datePurchased = this.InvestDateTimePicker.Value;
+                    Investment i = (Investment)this.NameComboBox.SelectedItem;
+                    ui.IdInvestment = i.IdInvestment;
+                    ui.idUser = this.user.idUser;      
+                    ui.ValuePLN = Double.Parse(this.InvValueTextBox.Text);
+                    ui.ValuePurchased = Double.Parse(this.RateTextBox.Text);
+                    ui.Amount = Double.Parse(this.AmountTextBox.Text);
+                    ui.DatePurchased = this.InvestDateTimePicker.Value;          
                     ui = SqlConnector.AddUserInvestment(ui);
                 }
                 catch (Exception)
@@ -203,15 +215,15 @@ namespace InvestmentLibrary
             {
                 return false;
             }
-            if (this.InvValueTextBox.TextLength == 0 || !Double.TryParse(this.InvValueTextBox.Text, out double result))
+            if (this.InvValueTextBox.TextLength == 0 || !Double.TryParse(this.InvValueTextBox.Text, out double _1))
             {
                 return false;
             }
-            if (this.RateTextBox.TextLength == 0 || !Double.TryParse(this.RateTextBox.Text, out double r))
+            if (this.RateTextBox.TextLength == 0 || !Double.TryParse(this.RateTextBox.Text, out double _2))
             {
                 return false;
             }
-            if (this.AmountTextBox.TextLength == 0 || !Double.TryParse(this.AmountTextBox.Text, out double re))
+            if (this.AmountTextBox.TextLength == 0 || !Double.TryParse(this.AmountTextBox.Text, out double _3))
             {
                 return false;
             }

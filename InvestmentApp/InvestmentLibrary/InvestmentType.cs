@@ -8,17 +8,17 @@ namespace InvestmentLibrary
 {
     class InvestmentType
     {
-        public int idInvestmentType { get; set; }
-        public String invName { get; set; }
+        public int IdInvestmentType { get; set; }
+        public String InvName { get; set; }
         public InvestmentType(String invName)
         {
-            this.invName = invName;
-            this.idInvestmentType = 0;
+            this.InvName = invName;
+            this.IdInvestmentType = 0;
         }
 
         public InvestmentType()
         {
-            this.idInvestmentType = 0;
+            this.IdInvestmentType = 0;
         }
     }
 }

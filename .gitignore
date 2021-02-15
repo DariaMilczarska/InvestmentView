@@ -28,3 +28,4 @@ InvestmentApp/InvestmentLibrary/obj/Debug/.NETFramework,Version=v4.7.2.AssemblyA
 *.pri
 *.xaml
 InvestmentApp/InvestmentLibrary/obj/Debug/Panels.g.i.cs
+InvestmentApp/InvestmentLibrary/obj/Release/.NETFramework,Version=v4.7.2.AssemblyAttributes.cs

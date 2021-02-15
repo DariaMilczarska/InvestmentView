@@ -15,7 +15,9 @@ namespace InvestmentLibrary
         public double ValueInPLN { get; set; }
         public double value{ get; set; }
         public DateTime DatePurchased { get; set; }
+        public double RealValue { get; set; }
         public double difference { get; set; }
+        public double differenceInP { get; set; }
 
         public InvestmentView()
         {

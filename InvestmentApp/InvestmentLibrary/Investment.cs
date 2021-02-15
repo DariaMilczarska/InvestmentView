@@ -9,34 +9,26 @@ namespace InvestmentLibrary
 {
     class Investment
     {
-        public int idInvestment { get; set; }
-        public InvestmentType investmentType { get; set; }
-        public double value { get; set; }
-        public String invName { get; set; }
-        public String dataSource { get; set; } = null;
-        public Currency currency { get; set; }
+        public int IdInvestment { get; set; }
+        public int IdInvestmentType { get; set; }
+        public int IdCurrency { get; set; }
+        public double Value { get; set; }
+        public String InvName { get; set; }
+        public String DataSource { get; set; } = null;     
 
-        //public Investment(InvestmentType investmentType, double value, String invName, String dataSource)
-        //{
-        //    this.investmentType = investmentType;
-        //    this.value = value;
-        //    this.invName = invName;
-        //    this.dataSource = dataSource;
-        //    this.idInvestment = 0;
-        //}
         public Investment()
         {
-            this.idInvestment = 0;
+            this.IdInvestment = 0;
         }
         public void InitializeValue()
         {
             WebClient web = new WebClient();
-            string data = web.DownloadString(dataSource);
+            string data = web.DownloadString(DataSource);
             String[] splited = data.Split(new String[] { "data-last=\"" }, StringSplitOptions.None);
             String[] endSplit = splited[1].Split('"');
             String temp = endSplit[0].Replace('.', ',');
-            this.value = Double.Parse(temp);
-            SqlConnector.EditInvestmentValue(this);
+            this.Value = Double.Parse(temp);
+            SqlConnector.UpdateInvestmentData(this);
         }
     }
 }

@@ -9,23 +9,23 @@ namespace InvestmentLibrary
 {
     class Currency
     {
-        public int idCurrency { get; set; }
+        public int IdCurrency { get; set; }
         public String Shorthand { get; set; }
-        public double value { get; set; }
-        public String dataSource { get; set; }
+        public double Value { get; set; }
+        public String DataSource { get; set; }
         public Currency()
         {
-            this.idCurrency = 0;
+            this.IdCurrency = 0;
         }
 
         public void InitializeValue()
         {
             WebClient web = new WebClient();
-            string data = web.DownloadString(dataSource);
+            string data = web.DownloadString(DataSource);
             String[] splited = data.Split(new String[] { "profilLast\">" }, StringSplitOptions.None);
             String[] endSplit = splited[1].Split(' ');
             String temp = endSplit[0].Replace('.', ',');
-            this.value = Double.Parse(temp);
+            this.Value = Double.Parse(temp);
         }
     }
 }
