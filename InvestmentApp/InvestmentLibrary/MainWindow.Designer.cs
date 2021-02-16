@@ -32,7 +32,7 @@ namespace InvestmentLibrary
             this.MainPanel = new System.Windows.Forms.Panel();
             this.OutcomeValueLabel = new System.Windows.Forms.Label();
             this.NewInvestmentButton = new System.Windows.Forms.Button();
-            this.DiagramButton = new System.Windows.Forms.Button();
+            this.StatsButton = new System.Windows.Forms.Button();
             this.OutcomeLabel = new System.Windows.Forms.Label();
             this.HistoryOfInvestments = new System.Windows.Forms.Button();
             this.MyInvestmentBurron = new System.Windows.Forms.Button();
@@ -42,10 +42,9 @@ namespace InvestmentLibrary
             // MainPanel
             // 
             this.MainPanel.AutoSize = true;
-            this.MainPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.MainPanel.Location = new System.Drawing.Point(12, 121);
+            this.MainPanel.Location = new System.Drawing.Point(5, 115);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(0, 0);
+            this.MainPanel.Size = new System.Drawing.Size(874, 480);
             this.MainPanel.TabIndex = 0;
             // 
             // OutcomeValueLabel
@@ -53,7 +52,7 @@ namespace InvestmentLibrary
             this.OutcomeValueLabel.AutoSize = true;
             this.OutcomeValueLabel.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.OutcomeValueLabel.ForeColor = System.Drawing.Color.SeaGreen;
-            this.OutcomeValueLabel.Location = new System.Drawing.Point(829, 63);
+            this.OutcomeValueLabel.Location = new System.Drawing.Point(688, 56);
             this.OutcomeValueLabel.Name = "OutcomeValueLabel";
             this.OutcomeValueLabel.Size = new System.Drawing.Size(90, 36);
             this.OutcomeValueLabel.TabIndex = 19;
@@ -63,30 +62,31 @@ namespace InvestmentLibrary
             // 
             this.NewInvestmentButton.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.NewInvestmentButton.ForeColor = System.Drawing.Color.Navy;
-            this.NewInvestmentButton.Location = new System.Drawing.Point(344, 56);
+            this.NewInvestmentButton.Location = new System.Drawing.Point(289, 56);
             this.NewInvestmentButton.Name = "NewInvestmentButton";
-            this.NewInvestmentButton.Size = new System.Drawing.Size(341, 59);
+            this.NewInvestmentButton.Size = new System.Drawing.Size(287, 59);
             this.NewInvestmentButton.TabIndex = 18;
             this.NewInvestmentButton.Text = "New Investment";
             this.NewInvestmentButton.UseVisualStyleBackColor = true;
             this.NewInvestmentButton.Click += new System.EventHandler(this.NewInvestmentButton_Click);
             // 
-            // DiagramButton
+            // StatsButton
             // 
-            this.DiagramButton.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.DiagramButton.ForeColor = System.Drawing.Color.Navy;
-            this.DiagramButton.Location = new System.Drawing.Point(5, 56);
-            this.DiagramButton.Name = "DiagramButton";
-            this.DiagramButton.Size = new System.Drawing.Size(341, 59);
-            this.DiagramButton.TabIndex = 17;
-            this.DiagramButton.Text = "View Diagram";
-            this.DiagramButton.UseVisualStyleBackColor = true;
+            this.StatsButton.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.StatsButton.ForeColor = System.Drawing.Color.Navy;
+            this.StatsButton.Location = new System.Drawing.Point(5, 56);
+            this.StatsButton.Name = "StatsButton";
+            this.StatsButton.Size = new System.Drawing.Size(287, 59);
+            this.StatsButton.TabIndex = 17;
+            this.StatsButton.Text = "View Stats";
+            this.StatsButton.UseVisualStyleBackColor = true;
+            this.StatsButton.Click += new System.EventHandler(this.StatsButton_Click);
             // 
             // OutcomeLabel
             // 
             this.OutcomeLabel.AutoSize = true;
             this.OutcomeLabel.Font = new System.Drawing.Font("Bahnschrift", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.OutcomeLabel.Location = new System.Drawing.Point(814, 10);
+            this.OutcomeLabel.Location = new System.Drawing.Point(673, 10);
             this.OutcomeLabel.Name = "OutcomeLabel";
             this.OutcomeLabel.Size = new System.Drawing.Size(126, 34);
             this.OutcomeLabel.TabIndex = 16;
@@ -96,9 +96,9 @@ namespace InvestmentLibrary
             // 
             this.HistoryOfInvestments.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.HistoryOfInvestments.ForeColor = System.Drawing.Color.Navy;
-            this.HistoryOfInvestments.Location = new System.Drawing.Point(344, 0);
+            this.HistoryOfInvestments.Location = new System.Drawing.Point(289, 0);
             this.HistoryOfInvestments.Name = "HistoryOfInvestments";
-            this.HistoryOfInvestments.Size = new System.Drawing.Size(341, 59);
+            this.HistoryOfInvestments.Size = new System.Drawing.Size(287, 59);
             this.HistoryOfInvestments.TabIndex = 15;
             this.HistoryOfInvestments.Text = "History";
             this.HistoryOfInvestments.UseVisualStyleBackColor = true;
@@ -110,7 +110,7 @@ namespace InvestmentLibrary
             this.MyInvestmentBurron.ForeColor = System.Drawing.Color.Navy;
             this.MyInvestmentBurron.Location = new System.Drawing.Point(5, -1);
             this.MyInvestmentBurron.Name = "MyInvestmentBurron";
-            this.MyInvestmentBurron.Size = new System.Drawing.Size(341, 59);
+            this.MyInvestmentBurron.Size = new System.Drawing.Size(287, 59);
             this.MyInvestmentBurron.TabIndex = 13;
             this.MyInvestmentBurron.Text = "My Investments";
             this.MyInvestmentBurron.UseVisualStyleBackColor = true;
@@ -131,10 +131,10 @@ namespace InvestmentLibrary
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1046, 764);
+            this.ClientSize = new System.Drawing.Size(883, 595);
             this.Controls.Add(this.OutcomeValueLabel);
             this.Controls.Add(this.NewInvestmentButton);
-            this.Controls.Add(this.DiagramButton);
+            this.Controls.Add(this.StatsButton);
             this.Controls.Add(this.OutcomeLabel);
             this.Controls.Add(this.HistoryOfInvestments);
             this.Controls.Add(this.MyInvestmentBurron);
@@ -152,7 +152,7 @@ namespace InvestmentLibrary
         private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Label OutcomeValueLabel;
         private System.Windows.Forms.Button NewInvestmentButton;
-        private System.Windows.Forms.Button DiagramButton;
+        private System.Windows.Forms.Button StatsButton;
         private System.Windows.Forms.Label OutcomeLabel;
         private System.Windows.Forms.Button HistoryOfInvestments;
         private System.Windows.Forms.Button MyInvestmentBurron;

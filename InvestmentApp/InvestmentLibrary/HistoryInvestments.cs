@@ -16,6 +16,22 @@ namespace InvestmentLibrary
         {
             InitializeComponent();
             this.HistoryDataGridView.DataSource = SqlConnector.GetHistoryView_All();
+            CalculateOutcome();
+        }
+
+        private void CalculateOutcome()
+        {
+            List<HistoryView> avaiableInvestments = SqlConnector.GetHistoryView_All();
+            double sum = 0;
+            double sumInvested = 0;
+            double percent;
+            foreach (HistoryView iv in avaiableInvestments)
+            {
+                sum += iv.Difference;
+                sumInvested += iv.ValuePurchased;
+            }
+            percent = 100 - (100 * (sumInvested + sum) / sumInvested);
+            this.HistoryValueLabel.Text = ($"{sum} ({percent}%)");
         }
     }
 }

@@ -13,10 +13,11 @@ namespace InvestmentLibrary
     public partial class CurrentInvestmetns : Form
     {
         readonly User user;
+        readonly List<InvestmentView> availableInvestments = SqlConnector.GetInvestmentView_All();
         public CurrentInvestmetns(User u)
         {
             InitializeComponent();
-            this.CurrentInvestmentsDataGridView.DataSource = SqlConnector.GetInvestmentView_All();
+            InitializeList();
             this.user = u;
         }
 
@@ -31,6 +32,14 @@ namespace InvestmentLibrary
             Investment selectedInvestment = SqlConnector.GetInvestment(name);
             UserInvestment ui = SqlConnector.GetUserInvestment(user.idUser, selectedInvestment.IdInvestment);
             SqlConnector.FinishInvestment(ui.IdUserInvestment);
+            availableInvestments.RemoveAt(this.CurrentInvestmentsDataGridView.CurrentRow.Index);
+            InitializeList();
+        }
+
+        private void InitializeList()
+        {
+            this.CurrentInvestmentsDataGridView.DataSource = null;
+            this.CurrentInvestmentsDataGridView.DataSource = availableInvestments;
         }
     }
 }

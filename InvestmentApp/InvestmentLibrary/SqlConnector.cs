@@ -184,7 +184,7 @@ namespace InvestmentLibrary
             using (IDbConnection connection = new MySqlConnection(GetConnectionString(ConnectionName)))
             {
                 DynamicParameters p = new DynamicParameters();
-                p.Add("IdUserInvestment", IdUserInvestment);
+                p.Add("IdUI", IdUserInvestment);
 
                 connection.Execute("deleteUserInvestment", p, commandType: CommandType.StoredProcedure);
             }
@@ -212,8 +212,8 @@ namespace InvestmentLibrary
             using (IDbConnection connection = new MySqlConnection(GetConnectionString(ConnectionName)))
             {
                 DynamicParameters p = new DynamicParameters();
-                p.Add("idUser", idU);
-                p.Add("idInvestment", idI);
+                p.Add("idU", idU);
+                p.Add("idI", idI);
                 return connection.Query<UserInvestment>("GetUserInvestment", p, commandType: CommandType.StoredProcedure).ToList()[0];
             }
         }
@@ -228,5 +228,18 @@ namespace InvestmentLibrary
                 connection.Execute("updateCurrency", p, commandType: CommandType.StoredProcedure);
             }
         }
+
+        public static List<double> GetInvestmentType(String name)
+        {
+            using (IDbConnection connection = new MySqlConnection(GetConnectionString(ConnectionName)))
+            {
+                DynamicParameters p = new DynamicParameters();
+                p.Add("invName", name);
+
+                return connection.Query<double>("GetInvestmentType", p, commandType: CommandType.StoredProcedure).ToList();
+            }
+        }
+
+
     }
 }

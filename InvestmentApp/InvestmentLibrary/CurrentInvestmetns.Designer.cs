@@ -30,6 +30,7 @@ namespace InvestmentLibrary
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CurrentInvestmentsDataGridView = new System.Windows.Forms.DataGridView();
             this.ActiveInvestitionsLabel = new System.Windows.Forms.Label();
@@ -43,6 +44,9 @@ namespace InvestmentLibrary
             // 
             this.CurrentInvestmentsDataGridView.AllowUserToAddRows = false;
             this.CurrentInvestmentsDataGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CurrentInvestmentsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.CurrentInvestmentsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.CurrentInvestmentsDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.CurrentInvestmentsDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
@@ -50,10 +54,11 @@ namespace InvestmentLibrary
             this.CurrentInvestmentsDataGridView.ImeMode = System.Windows.Forms.ImeMode.On;
             this.CurrentInvestmentsDataGridView.Location = new System.Drawing.Point(1, 60);
             this.CurrentInvestmentsDataGridView.Name = "CurrentInvestmentsDataGridView";
+            this.CurrentInvestmentsDataGridView.ReadOnly = true;
             this.CurrentInvestmentsDataGridView.RowHeadersWidth = 51;
             this.CurrentInvestmentsDataGridView.RowTemplate.Height = 24;
             this.CurrentInvestmentsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.CurrentInvestmentsDataGridView.Size = new System.Drawing.Size(832, 539);
+            this.CurrentInvestmentsDataGridView.Size = new System.Drawing.Size(982, 539);
             this.CurrentInvestmentsDataGridView.TabIndex = 0;
             // 
             // ActiveInvestitionsLabel
@@ -87,7 +92,7 @@ namespace InvestmentLibrary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 595);
+            this.ClientSize = new System.Drawing.Size(984, 595);
             this.Controls.Add(this.WithdrawalButton);
             this.Controls.Add(this.ActiveInvestitionsLabel);
             this.Controls.Add(this.CurrentInvestmentsDataGridView);

@@ -94,7 +94,7 @@ namespace InvestmentLibrary
             this.startPanel.Location = new System.Drawing.Point(0, 0);
             this.startPanel.Margin = new System.Windows.Forms.Padding(4);
             this.startPanel.Name = "startPanel";
-            this.startPanel.Size = new System.Drawing.Size(832, 595);
+            this.startPanel.Size = new System.Drawing.Size(883, 595);
             this.startPanel.TabIndex = 0;
             // 
             // CurrencyGroupBox
@@ -104,7 +104,7 @@ namespace InvestmentLibrary
             this.CurrencyGroupBox.Controls.Add(this.CurrencyShortcutTextBox);
             this.CurrencyGroupBox.Controls.Add(this.CurrencyDataSourceLabel);
             this.CurrencyGroupBox.Controls.Add(this.CurrencyShortcutLabel);
-            this.CurrencyGroupBox.Location = new System.Drawing.Point(425, 89);
+            this.CurrencyGroupBox.Location = new System.Drawing.Point(440, 89);
             this.CurrencyGroupBox.Name = "CurrencyGroupBox";
             this.CurrencyGroupBox.Size = new System.Drawing.Size(402, 221);
             this.CurrencyGroupBox.TabIndex = 19;
@@ -155,7 +155,7 @@ namespace InvestmentLibrary
             // 
             // AmountTextBox
             // 
-            this.AmountTextBox.Location = new System.Drawing.Point(185, 245);
+            this.AmountTextBox.Location = new System.Drawing.Point(195, 245);
             this.AmountTextBox.Name = "AmountTextBox";
             this.AmountTextBox.Size = new System.Drawing.Size(188, 32);
             this.AmountTextBox.TabIndex = 18;
@@ -163,7 +163,7 @@ namespace InvestmentLibrary
             // AmountLabel
             // 
             this.AmountLabel.AutoSize = true;
-            this.AmountLabel.Location = new System.Drawing.Point(99, 245);
+            this.AmountLabel.Location = new System.Drawing.Point(109, 245);
             this.AmountLabel.Name = "AmountLabel";
             this.AmountLabel.Size = new System.Drawing.Size(80, 24);
             this.AmountLabel.TabIndex = 17;
@@ -172,7 +172,7 @@ namespace InvestmentLibrary
             // DateLabel
             // 
             this.DateLabel.AutoSize = true;
-            this.DateLabel.Location = new System.Drawing.Point(127, 297);
+            this.DateLabel.Location = new System.Drawing.Point(137, 297);
             this.DateLabel.Name = "DateLabel";
             this.DateLabel.Size = new System.Drawing.Size(52, 24);
             this.DateLabel.TabIndex = 16;
@@ -181,7 +181,7 @@ namespace InvestmentLibrary
             // InvestDateTimePicker
             // 
             this.InvestDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.InvestDateTimePicker.Location = new System.Drawing.Point(185, 294);
+            this.InvestDateTimePicker.Location = new System.Drawing.Point(195, 294);
             this.InvestDateTimePicker.Name = "InvestDateTimePicker";
             this.InvestDateTimePicker.Size = new System.Drawing.Size(188, 32);
             this.InvestDateTimePicker.TabIndex = 15;
@@ -189,14 +189,14 @@ namespace InvestmentLibrary
             // NameComboBox
             // 
             this.NameComboBox.FormattingEnabled = true;
-            this.NameComboBox.Location = new System.Drawing.Point(185, 89);
+            this.NameComboBox.Location = new System.Drawing.Point(195, 89);
             this.NameComboBox.Name = "NameComboBox";
             this.NameComboBox.Size = new System.Drawing.Size(188, 32);
             this.NameComboBox.TabIndex = 14;
             // 
             // AddInvestmentButton
             // 
-            this.AddInvestmentButton.Location = new System.Drawing.Point(185, 350);
+            this.AddInvestmentButton.Location = new System.Drawing.Point(194, 350);
             this.AddInvestmentButton.Name = "AddInvestmentButton";
             this.AddInvestmentButton.Size = new System.Drawing.Size(187, 59);
             this.AddInvestmentButton.TabIndex = 12;
@@ -215,7 +215,7 @@ namespace InvestmentLibrary
             this.CreateInvestmentGroupBox.Controls.Add(this.InvestemntTypeComboBox);
             this.CreateInvestmentGroupBox.Controls.Add(this.DataSourceLabel);
             this.CreateInvestmentGroupBox.Controls.Add(this.DataSourceTextBox);
-            this.CreateInvestmentGroupBox.Location = new System.Drawing.Point(425, 316);
+            this.CreateInvestmentGroupBox.Location = new System.Drawing.Point(440, 316);
             this.CreateInvestmentGroupBox.Name = "CreateInvestmentGroupBox";
             this.CreateInvestmentGroupBox.Size = new System.Drawing.Size(402, 273);
             this.CreateInvestmentGroupBox.TabIndex = 13;
@@ -301,7 +301,7 @@ namespace InvestmentLibrary
             // ValueLabel
             // 
             this.ValueLabel.AutoSize = true;
-            this.ValueLabel.Location = new System.Drawing.Point(127, 193);
+            this.ValueLabel.Location = new System.Drawing.Point(137, 193);
             this.ValueLabel.Name = "ValueLabel";
             this.ValueLabel.Size = new System.Drawing.Size(52, 24);
             this.ValueLabel.TabIndex = 9;
@@ -309,7 +309,7 @@ namespace InvestmentLibrary
             // 
             // RateTextBox
             // 
-            this.RateTextBox.Location = new System.Drawing.Point(185, 193);
+            this.RateTextBox.Location = new System.Drawing.Point(195, 193);
             this.RateTextBox.Name = "RateTextBox";
             this.RateTextBox.Size = new System.Drawing.Size(188, 32);
             this.RateTextBox.TabIndex = 8;
@@ -319,7 +319,7 @@ namespace InvestmentLibrary
             this.CreateTypeGroupBox.Controls.Add(this.TypeNameTextBox);
             this.CreateTypeGroupBox.Controls.Add(this.AddTypeButton);
             this.CreateTypeGroupBox.Controls.Add(this.TypeNameLabel);
-            this.CreateTypeGroupBox.Location = new System.Drawing.Point(40, 423);
+            this.CreateTypeGroupBox.Location = new System.Drawing.Point(50, 424);
             this.CreateTypeGroupBox.Name = "CreateTypeGroupBox";
             this.CreateTypeGroupBox.Size = new System.Drawing.Size(353, 166);
             this.CreateTypeGroupBox.TabIndex = 6;
@@ -355,7 +355,7 @@ namespace InvestmentLibrary
             // MyInvestmentNameLabel
             // 
             this.MyInvestmentNameLabel.AutoSize = true;
-            this.MyInvestmentNameLabel.Location = new System.Drawing.Point(116, 89);
+            this.MyInvestmentNameLabel.Location = new System.Drawing.Point(126, 89);
             this.MyInvestmentNameLabel.Name = "MyInvestmentNameLabel";
             this.MyInvestmentNameLabel.Size = new System.Drawing.Size(63, 24);
             this.MyInvestmentNameLabel.TabIndex = 4;
@@ -364,7 +364,7 @@ namespace InvestmentLibrary
             // InvValueLabel
             // 
             this.InvValueLabel.AutoSize = true;
-            this.InvValueLabel.Location = new System.Drawing.Point(36, 141);
+            this.InvValueLabel.Location = new System.Drawing.Point(46, 141);
             this.InvValueLabel.Name = "InvValueLabel";
             this.InvValueLabel.Size = new System.Drawing.Size(143, 24);
             this.InvValueLabel.TabIndex = 2;
@@ -372,7 +372,7 @@ namespace InvestmentLibrary
             // 
             // InvValueTextBox
             // 
-            this.InvValueTextBox.Location = new System.Drawing.Point(185, 141);
+            this.InvValueTextBox.Location = new System.Drawing.Point(195, 141);
             this.InvValueTextBox.Name = "InvValueTextBox";
             this.InvValueTextBox.Size = new System.Drawing.Size(188, 32);
             this.InvValueTextBox.TabIndex = 1;
@@ -382,7 +382,7 @@ namespace InvestmentLibrary
             this.AddInvestmentLabel.AutoSize = true;
             this.AddInvestmentLabel.Font = new System.Drawing.Font("Bahnschrift", 16F);
             this.AddInvestmentLabel.ForeColor = System.Drawing.Color.Navy;
-            this.AddInvestmentLabel.Location = new System.Drawing.Point(321, 19);
+            this.AddInvestmentLabel.Location = new System.Drawing.Point(332, 19);
             this.AddInvestmentLabel.Name = "AddInvestmentLabel";
             this.AddInvestmentLabel.Size = new System.Drawing.Size(216, 33);
             this.AddInvestmentLabel.TabIndex = 0;
@@ -393,8 +393,10 @@ namespace InvestmentLibrary
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.MintCream;
-            this.ClientSize = new System.Drawing.Size(832, 595);
+            this.ClientSize = new System.Drawing.Size(883, 595);
             this.Controls.Add(this.startPanel);
             this.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Navy;

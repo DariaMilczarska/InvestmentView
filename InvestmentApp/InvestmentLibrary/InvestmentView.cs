@@ -11,13 +11,13 @@ namespace InvestmentLibrary
         public String InvestitionName { get; set; }
         public String TypeName { get; set; }
         public double ValuePurchased { get; set; }
-        public double amount { get; set; }
+        public double Amount { get; set; }
         public double ValueInPLN { get; set; }
-        public double value{ get; set; }
+        public double Value{ get; set; }
         public DateTime DatePurchased { get; set; }
         public double RealValue { get; set; }
-        public double difference { get; set; }
-        public double differenceInP { get; set; }
+        public double Difference { get; set; }
+        public double DifferenceInP { get; set; }
 
         public InvestmentView()
         {

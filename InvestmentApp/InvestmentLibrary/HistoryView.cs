@@ -8,11 +8,12 @@ namespace InvestmentLibrary
 {
     class HistoryView
     {
-        public double valuePurchased { get; set; }
-        public double valueSold { get; set; }
-        public double difference { get; set; }
-        public double differenceInP { get; set; }
-        public DateTime datePurchased { get; set; }
-        public DateTime dateSold { get; set; }
+        public String Name { get; set; }
+        public double ValuePurchased { get; set; }
+        public double ValueSold { get; set; }
+        public double Difference { get; set; }
+        public double DifferenceInP { get; set; }
+        public DateTime DatePurchased { get; set; }
+        public DateTime DateSold { get; set; }
     }
 }

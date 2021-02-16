@@ -26,6 +26,7 @@ namespace InvestmentLibrary
         {
             this.MainPanel.Controls.Clear();
             InvestmentWindow myForm = new InvestmentWindow(user) { Dock = DockStyle.None, TopLevel = false, TopMost = true };
+
             myForm.FormBorderStyle = FormBorderStyle.None;
             this.MainPanel.Controls.Add(myForm);
             myForm.Show();
@@ -81,16 +82,28 @@ namespace InvestmentLibrary
             }
         }
 
-        private void CalculateOutcome()
+        public void CalculateOutcome()
         {
             List<InvestmentView> availableInvestments = SqlConnector.GetInvestmentView_All();
             double sum = 0;
-            double percent = 0;
+            double sumInvested = 0;
+            double percent;
             foreach (InvestmentView iv in availableInvestments)
             {
-                sum += iv.difference;
+                sum += iv.Difference;
+                sumInvested += iv.ValueInPLN;
             }
-            this.OutcomeValueLabel.Text = sum.ToString();
+            percent = 100 - (100*(sumInvested + sum) / sumInvested);
+            OutcomeValueLabel.Text = $"{sum} ({percent}%)";
+        }
+
+        private void StatsButton_Click(object sender, EventArgs e)
+        {
+            this.MainPanel.Controls.Clear();
+            StatsWindow myForm = new StatsWindow(){ Dock = DockStyle.None, TopLevel = false, TopMost = true };
+            myForm.FormBorderStyle = FormBorderStyle.None;
+            this.MainPanel.Controls.Add(myForm);
+            myForm.Show();
         }
     }
 }
