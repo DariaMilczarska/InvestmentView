@@ -10,21 +10,27 @@ using System.Windows.Forms;
 
 namespace InvestmentLibrary
 {
+    public struct TypesPercentage
+    {
+        public String name;
+        public double percent;
+    }
     public partial class StatsWindow : Form
     {
+     
         public StatsWindow()
         {
             InitializeComponent();
-            this.CurrenciesDataGridView.DataSource = SqlConnector.GetCurrency_All();
+            this.CurrenciesDataGridView.DataSource = SqlConnector.GetCurrencyView();
             this.TypesDataGridView2.DataSource = CalculateTypesPercentage();
         }
 
-        private List<String> CalculateTypesPercentage()
+        private List<TypesPercentage> CalculateTypesPercentage()
         {
             double sum;
             List<double> helpListSum = new List<double>();
             List<String> helpListNames = new List<String>();
-            List<String> result = new List<string>();
+            List<TypesPercentage> result = new List<TypesPercentage>();
             foreach (InvestmentType t in SqlConnector.GetInvestmentType_All())
             {
                 List<double> temp = SqlConnector.GetInvestmentType(t.InvName);
@@ -38,7 +44,12 @@ namespace InvestmentLibrary
             double total = helpListSum.Sum();
             for(int i = 0; i < helpListSum.Count; ++i)
             {
-                result.Add($"{helpListNames[i]}: {100 * helpListSum[i] / total}");
+                TypesPercentage t = new TypesPercentage()
+                {
+                    name = helpListNames[i],
+                    percent = 100 * helpListSum[i] / total
+                };
+                result.Add(t);
             }
 
             return result;

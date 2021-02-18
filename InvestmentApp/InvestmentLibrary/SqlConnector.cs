@@ -217,6 +217,14 @@ namespace InvestmentLibrary
                 return connection.Query<UserInvestment>("GetUserInvestment", p, commandType: CommandType.StoredProcedure).ToList()[0];
             }
         }
+
+        public static List<CurrencyView> GetCurrencyView()
+        {
+            using (IDbConnection connection = new MySqlConnection(GetConnectionString(ConnectionName)))
+            {
+                return connection.Query<CurrencyView>("Select * from curencyview_view").ToList();
+            }
+        }
         public static void UpdateCurrencyData(Currency currency)
         {
             using (IDbConnection connection = new MySqlConnection(GetConnectionString(ConnectionName)))
@@ -234,9 +242,9 @@ namespace InvestmentLibrary
             using (IDbConnection connection = new MySqlConnection(GetConnectionString(ConnectionName)))
             {
                 DynamicParameters p = new DynamicParameters();
-                p.Add("invName", name);
+                p.Add("typeName", name);
 
-                return connection.Query<double>("GetInvestmentType", p, commandType: CommandType.StoredProcedure).ToList();
+                return connection.Query<double>("getInvestmentType", p, commandType: CommandType.StoredProcedure).ToList();
             }
         }
 
