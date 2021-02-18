@@ -1,2 +1,2 @@
 # InvestmentApp
- App which helps in managing your investitions - viewing profin, history and more
+ App which helps in managing your investitions - viewing profi, history and more
