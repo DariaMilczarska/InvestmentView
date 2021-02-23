@@ -183,15 +183,23 @@ namespace InvestmentLibrary
             {
                 try
                 {
-                    UserInvestment ui = new UserInvestment();
                     Investment i = (Investment)this.NameComboBox.SelectedItem;
+                    UserInvestment ui = new UserInvestment();
                     ui.IdInvestment = i.IdInvestment;
-                    ui.idUser = this.user.idUser;      
+                    ui.idUser = this.user.idUser;
                     ui.ValuePLN = Double.Parse(this.InvValueTextBox.Text);
-                    ui.ValuePurchased = Double.Parse(this.RateTextBox.Text);
+                    ui.ValuePurcharsed = Double.Parse(this.RateTextBox.Text);
                     ui.Amount = Double.Parse(this.AmountTextBox.Text);
-                    ui.DatePurchased = this.InvestDateTimePicker.Value;          
-                    ui = SqlConnector.AddUserInvestment(ui);
+                    ui.DatePurchased = this.InvestDateTimePicker.Value;
+                    if (!FindInvestment(i.IdInvestment))
+                    {                      
+                        ui = SqlConnector.AddUserInvestment(ui);
+                    }
+                    else
+                    {
+                        SqlConnector.EditUserInvestment(ui);
+                    }
+                    
                 }
                 catch (Exception)
                 {
@@ -232,6 +240,19 @@ namespace InvestmentLibrary
                 return false;
             }
             return true;
+        }
+
+        private bool FindInvestment(int id)
+        {
+            List<UserInvestment> currentInvestments = SqlConnector.GetUserInvestemnt_All();
+            foreach(UserInvestment ui in currentInvestments)
+            {
+                if(ui.IdInvestment == id)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

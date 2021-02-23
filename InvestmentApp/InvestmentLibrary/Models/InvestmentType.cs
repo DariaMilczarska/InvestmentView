@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace InvestmentLibrary
 {
+    /// <summary>
+    /// Contains information about type of the investment
+    /// </summary>
     class InvestmentType
     {
         public int IdInvestmentType { get; set; }

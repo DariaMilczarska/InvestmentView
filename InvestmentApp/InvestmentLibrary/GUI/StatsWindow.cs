@@ -25,12 +25,14 @@ namespace InvestmentLibrary
             this.TypesDataGridView2.DataSource = CalculateTypesPercentage();
         }
 
-        private List<TypesPercentage> CalculateTypesPercentage()
+        private DataTable CalculateTypesPercentage()
         {
             double sum;
             List<double> helpListSum = new List<double>();
             List<String> helpListNames = new List<String>();
-            List<TypesPercentage> result = new List<TypesPercentage>();
+            DataTable result = new DataTable();
+            result.Columns.Add("Type", typeof(string));
+            result.Columns.Add("Percent", typeof(string));
             foreach (InvestmentType t in SqlConnector.GetInvestmentType_All())
             {
                 List<double> temp = SqlConnector.GetInvestmentType(t.InvName);
@@ -49,7 +51,7 @@ namespace InvestmentLibrary
                     name = helpListNames[i],
                     percent = 100 * helpListSum[i] / total
                 };
-                result.Add(t);
+                result.Rows.Add(t.name, t.percent.ToString("0.00"));
             }
 
             return result;

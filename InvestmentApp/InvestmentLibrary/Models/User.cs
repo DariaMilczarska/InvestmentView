@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace InvestmentLibrary
 {
+    /// <summary>
+    /// Contains onfo about current user
+    /// </summary>
     public class User
     {
         public int idUser { get; set; }

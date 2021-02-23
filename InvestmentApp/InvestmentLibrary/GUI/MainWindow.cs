@@ -90,11 +90,21 @@ namespace InvestmentLibrary
             double percent;
             foreach (InvestmentView iv in availableInvestments)
             {
-                sum += iv.Difference;
-                sumInvested += iv.ValueInPLN;
+                sum += iv.Profit;
+                sumInvested += iv.ValuePLN;
             }
-            percent = 100 - (100*(sumInvested + sum) / sumInvested);
-            OutcomeValueLabel.Text = $"{sum} ({percent}%)";
+            percent = (100*(sumInvested + sum) / sumInvested) -100;
+
+            this.OutcomeValueLabel.Text =  $"{sum.ToString("0.00")} ({percent.ToString("0.00")}%)";
+            if(sum > 0)
+            {
+                OutcomeValueLabel.ForeColor = Color.Green;
+            }
+            else
+            {
+                OutcomeValueLabel.ForeColor = Color.Red;
+            }
+           
         }
 
         private void StatsButton_Click(object sender, EventArgs e)

@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using Dapper;
 using MySql.Data.MySqlClient;
 
 
 namespace InvestmentLibrary
 {
+    /// <summary>
+    /// Manages connection between program and database
+    /// </summary>
     class SqlConnector
     {
         public static String ConnectionName { get; set; } = "Investment";
@@ -78,7 +78,7 @@ namespace InvestmentLibrary
                 p.Add("idUser", UserInvestment.idUser);
                 p.Add("idInvestment", UserInvestment.IdInvestment);
                 p.Add("datePurchased", UserInvestment.DatePurchased);
-                p.Add("valPurchased", UserInvestment.ValuePurchased);
+                p.Add("valPurchased", UserInvestment.ValuePurcharsed);
                 p.Add("Amount", UserInvestment.Amount);
                 p.Add("valPLN", UserInvestment.ValuePLN);
                 p.Add("id", 0, DbType.Int32, ParameterDirection.Output);
@@ -248,6 +248,47 @@ namespace InvestmentLibrary
             }
         }
 
+        public static void EditUserInvestment(UserInvestment ui)
+        {
+            using (IDbConnection connection = new MySqlConnection(GetConnectionString(ConnectionName)))
+            {
+                var p = new DynamicParameters();
+                p.Add("idInv", ui.IdInvestment);
+                p.Add("valPLN", ui.ValuePurcharsed);
+                p.Add("am", ui.Amount);
+                p.Add("valP", ui.ValuePLN);
 
+                connection.Execute("EditUserInvestment", p, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public static void WithdrawPartOfInvestment(int idUI, double val)
+        {
+            using (IDbConnection connection = new MySqlConnection(GetConnectionString(ConnectionName)))
+            {
+                var p = new DynamicParameters();
+                p.Add("idUI", idUI);
+                p.Add("val", val);
+
+                connection.Execute("withdrawPartOfInvestemnt", p, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public static void AddHistoryInvestment(UserInvestment ui, double vPLN, double am)
+        {
+            using (IDbConnection connection = new MySqlConnection(GetConnectionString(ConnectionName)))
+            {
+                var p = new DynamicParameters();
+                p.Add("idU", ui.idUser);
+                p.Add("idInv", ui.IdInvestment);
+                p.Add("valPLN", ui.ValuePLN);
+                p.Add("fullAmount", ui.Amount);
+                p.Add("valS", vPLN);
+                p.Add("am", am);
+                p.Add("dateP", ui.DatePurchased);
+
+                connection.Execute("addHistoryInvestment", p, commandType: CommandType.StoredProcedure);
+            }
+        }
     }
 }

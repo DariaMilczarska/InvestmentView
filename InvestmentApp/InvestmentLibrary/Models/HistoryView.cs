@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace InvestmentLibrary
 {
+    /// <summary>
+    /// Contains the most important info about history of investitions
+    /// </summary>
     class HistoryView
     {
         public String Name { get; set; }

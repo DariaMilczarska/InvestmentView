@@ -73,7 +73,7 @@ namespace InvestmentLibrary
             this.startPanel.AllowDrop = true;
             this.startPanel.AutoSize = true;
             this.startPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.startPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.startPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.startPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.startPanel.Controls.Add(this.CurrencyGroupBox);
             this.startPanel.Controls.Add(this.AmountTextBox);
@@ -91,10 +91,11 @@ namespace InvestmentLibrary
             this.startPanel.Controls.Add(this.InvValueTextBox);
             this.startPanel.Controls.Add(this.AddInvestmentLabel);
             this.startPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.startPanel.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.startPanel.Location = new System.Drawing.Point(0, 0);
             this.startPanel.Margin = new System.Windows.Forms.Padding(4);
             this.startPanel.Name = "startPanel";
-            this.startPanel.Size = new System.Drawing.Size(883, 595);
+            this.startPanel.Size = new System.Drawing.Size(944, 595);
             this.startPanel.TabIndex = 0;
             // 
             // CurrencyGroupBox
@@ -104,35 +105,36 @@ namespace InvestmentLibrary
             this.CurrencyGroupBox.Controls.Add(this.CurrencyShortcutTextBox);
             this.CurrencyGroupBox.Controls.Add(this.CurrencyDataSourceLabel);
             this.CurrencyGroupBox.Controls.Add(this.CurrencyShortcutLabel);
-            this.CurrencyGroupBox.Location = new System.Drawing.Point(440, 89);
+            this.CurrencyGroupBox.Location = new System.Drawing.Point(473, 80);
             this.CurrencyGroupBox.Name = "CurrencyGroupBox";
-            this.CurrencyGroupBox.Size = new System.Drawing.Size(402, 221);
+            this.CurrencyGroupBox.Size = new System.Drawing.Size(443, 221);
             this.CurrencyGroupBox.TabIndex = 19;
             this.CurrencyGroupBox.TabStop = false;
             this.CurrencyGroupBox.Text = "Create Currency";
             // 
             // CreateCurrencyButton
             // 
-            this.CreateCurrencyButton.Location = new System.Drawing.Point(107, 156);
+            this.CreateCurrencyButton.BackColor = System.Drawing.Color.LightGray;
+            this.CreateCurrencyButton.Location = new System.Drawing.Point(141, 149);
             this.CreateCurrencyButton.Name = "CreateCurrencyButton";
-            this.CreateCurrencyButton.Size = new System.Drawing.Size(175, 47);
+            this.CreateCurrencyButton.Size = new System.Drawing.Size(175, 59);
             this.CreateCurrencyButton.TabIndex = 5;
             this.CreateCurrencyButton.Text = "Create currency";
-            this.CreateCurrencyButton.UseVisualStyleBackColor = true;
+            this.CreateCurrencyButton.UseVisualStyleBackColor = false;
             this.CreateCurrencyButton.Click += new System.EventHandler(this.CreateCurrencyButton_Click);
             // 
             // CurrencyDataSourceTextBox
             // 
-            this.CurrencyDataSourceTextBox.Location = new System.Drawing.Point(144, 95);
+            this.CurrencyDataSourceTextBox.Location = new System.Drawing.Point(165, 95);
             this.CurrencyDataSourceTextBox.Name = "CurrencyDataSourceTextBox";
-            this.CurrencyDataSourceTextBox.Size = new System.Drawing.Size(241, 32);
+            this.CurrencyDataSourceTextBox.Size = new System.Drawing.Size(241, 30);
             this.CurrencyDataSourceTextBox.TabIndex = 4;
             // 
             // CurrencyShortcutTextBox
             // 
-            this.CurrencyShortcutTextBox.Location = new System.Drawing.Point(144, 44);
+            this.CurrencyShortcutTextBox.Location = new System.Drawing.Point(164, 44);
             this.CurrencyShortcutTextBox.Name = "CurrencyShortcutTextBox";
-            this.CurrencyShortcutTextBox.Size = new System.Drawing.Size(241, 32);
+            this.CurrencyShortcutTextBox.Size = new System.Drawing.Size(241, 30);
             this.CurrencyShortcutTextBox.TabIndex = 3;
             // 
             // CurrencyDataSourceLabel
@@ -140,68 +142,71 @@ namespace InvestmentLibrary
             this.CurrencyDataSourceLabel.AutoSize = true;
             this.CurrencyDataSourceLabel.Location = new System.Drawing.Point(24, 96);
             this.CurrencyDataSourceLabel.Name = "CurrencyDataSourceLabel";
-            this.CurrencyDataSourceLabel.Size = new System.Drawing.Size(116, 24);
+            this.CurrencyDataSourceLabel.Size = new System.Drawing.Size(133, 24);
             this.CurrencyDataSourceLabel.TabIndex = 2;
-            this.CurrencyDataSourceLabel.Text = "DataSource";
+            this.CurrencyDataSourceLabel.Text = "Data source";
             // 
             // CurrencyShortcutLabel
             // 
             this.CurrencyShortcutLabel.AutoSize = true;
             this.CurrencyShortcutLabel.Location = new System.Drawing.Point(50, 47);
             this.CurrencyShortcutLabel.Name = "CurrencyShortcutLabel";
-            this.CurrencyShortcutLabel.Size = new System.Drawing.Size(88, 24);
+            this.CurrencyShortcutLabel.Size = new System.Drawing.Size(101, 24);
             this.CurrencyShortcutLabel.TabIndex = 0;
             this.CurrencyShortcutLabel.Text = "Shortcut";
             // 
             // AmountTextBox
             // 
-            this.AmountTextBox.Location = new System.Drawing.Point(195, 245);
+            this.AmountTextBox.Location = new System.Drawing.Point(215, 243);
             this.AmountTextBox.Name = "AmountTextBox";
-            this.AmountTextBox.Size = new System.Drawing.Size(188, 32);
+            this.AmountTextBox.Size = new System.Drawing.Size(188, 30);
             this.AmountTextBox.TabIndex = 18;
             // 
             // AmountLabel
             // 
             this.AmountLabel.AutoSize = true;
-            this.AmountLabel.Location = new System.Drawing.Point(109, 245);
+            this.AmountLabel.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.AmountLabel.Location = new System.Drawing.Point(115, 245);
             this.AmountLabel.Name = "AmountLabel";
-            this.AmountLabel.Size = new System.Drawing.Size(80, 24);
+            this.AmountLabel.Size = new System.Drawing.Size(94, 24);
             this.AmountLabel.TabIndex = 17;
             this.AmountLabel.Text = "Amount";
             // 
             // DateLabel
             // 
             this.DateLabel.AutoSize = true;
-            this.DateLabel.Location = new System.Drawing.Point(137, 297);
+            this.DateLabel.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.DateLabel.Location = new System.Drawing.Point(151, 297);
             this.DateLabel.Name = "DateLabel";
-            this.DateLabel.Size = new System.Drawing.Size(52, 24);
+            this.DateLabel.Size = new System.Drawing.Size(58, 24);
             this.DateLabel.TabIndex = 16;
             this.DateLabel.Text = "Date";
             // 
             // InvestDateTimePicker
             // 
             this.InvestDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.InvestDateTimePicker.Location = new System.Drawing.Point(195, 294);
+            this.InvestDateTimePicker.Location = new System.Drawing.Point(215, 293);
             this.InvestDateTimePicker.Name = "InvestDateTimePicker";
-            this.InvestDateTimePicker.Size = new System.Drawing.Size(188, 32);
+            this.InvestDateTimePicker.Size = new System.Drawing.Size(188, 30);
             this.InvestDateTimePicker.TabIndex = 15;
             // 
             // NameComboBox
             // 
             this.NameComboBox.FormattingEnabled = true;
-            this.NameComboBox.Location = new System.Drawing.Point(195, 89);
+            this.NameComboBox.Location = new System.Drawing.Point(215, 89);
             this.NameComboBox.Name = "NameComboBox";
             this.NameComboBox.Size = new System.Drawing.Size(188, 32);
             this.NameComboBox.TabIndex = 14;
             // 
             // AddInvestmentButton
             // 
-            this.AddInvestmentButton.Location = new System.Drawing.Point(194, 350);
+            this.AddInvestmentButton.BackColor = System.Drawing.Color.LightGray;
+            this.AddInvestmentButton.Location = new System.Drawing.Point(214, 348);
             this.AddInvestmentButton.Name = "AddInvestmentButton";
             this.AddInvestmentButton.Size = new System.Drawing.Size(187, 59);
             this.AddInvestmentButton.TabIndex = 12;
             this.AddInvestmentButton.Text = "Add my investment";
-            this.AddInvestmentButton.UseVisualStyleBackColor = true;
+            this.AddInvestmentButton.UseVisualStyleBackColor = false;
             this.AddInvestmentButton.Click += new System.EventHandler(this.AddInvestmentButton_Click);
             // 
             // CreateInvestmentGroupBox
@@ -215,9 +220,9 @@ namespace InvestmentLibrary
             this.CreateInvestmentGroupBox.Controls.Add(this.InvestemntTypeComboBox);
             this.CreateInvestmentGroupBox.Controls.Add(this.DataSourceLabel);
             this.CreateInvestmentGroupBox.Controls.Add(this.DataSourceTextBox);
-            this.CreateInvestmentGroupBox.Location = new System.Drawing.Point(440, 316);
+            this.CreateInvestmentGroupBox.Location = new System.Drawing.Point(473, 317);
             this.CreateInvestmentGroupBox.Name = "CreateInvestmentGroupBox";
-            this.CreateInvestmentGroupBox.Size = new System.Drawing.Size(402, 273);
+            this.CreateInvestmentGroupBox.Size = new System.Drawing.Size(443, 273);
             this.CreateInvestmentGroupBox.TabIndex = 13;
             this.CreateInvestmentGroupBox.TabStop = false;
             this.CreateInvestmentGroupBox.Text = "Create Investment";
@@ -225,9 +230,9 @@ namespace InvestmentLibrary
             // CurrencyComboBox
             // 
             this.CurrencyComboBox.FormattingEnabled = true;
-            this.CurrencyComboBox.Location = new System.Drawing.Point(178, 169);
+            this.CurrencyComboBox.Location = new System.Drawing.Point(191, 171);
             this.CurrencyComboBox.Name = "CurrencyComboBox";
-            this.CurrencyComboBox.Size = new System.Drawing.Size(188, 32);
+            this.CurrencyComboBox.Size = new System.Drawing.Size(214, 32);
             this.CurrencyComboBox.TabIndex = 16;
             // 
             // CurrencyLabel
@@ -235,34 +240,35 @@ namespace InvestmentLibrary
             this.CurrencyLabel.AutoSize = true;
             this.CurrencyLabel.Location = new System.Drawing.Point(73, 171);
             this.CurrencyLabel.Name = "CurrencyLabel";
-            this.CurrencyLabel.Size = new System.Drawing.Size(93, 24);
+            this.CurrencyLabel.Size = new System.Drawing.Size(105, 24);
             this.CurrencyLabel.TabIndex = 15;
             this.CurrencyLabel.Text = "Currency";
             // 
             // CreateInvestmentbutton
             // 
-            this.CreateInvestmentbutton.Location = new System.Drawing.Point(92, 216);
+            this.CreateInvestmentbutton.BackColor = System.Drawing.Color.LightGray;
+            this.CreateInvestmentbutton.Location = new System.Drawing.Point(112, 216);
             this.CreateInvestmentbutton.Name = "CreateInvestmentbutton";
             this.CreateInvestmentbutton.Size = new System.Drawing.Size(219, 47);
             this.CreateInvestmentbutton.TabIndex = 14;
             this.CreateInvestmentbutton.Text = "Create Investment";
-            this.CreateInvestmentbutton.UseVisualStyleBackColor = true;
+            this.CreateInvestmentbutton.UseVisualStyleBackColor = false;
             this.CreateInvestmentbutton.Click += new System.EventHandler(this.CreateInvestmentbutton_Click);
             // 
             // InvestmentNameLabel
             // 
             this.InvestmentNameLabel.AutoSize = true;
-            this.InvestmentNameLabel.Location = new System.Drawing.Point(103, 85);
+            this.InvestmentNameLabel.Location = new System.Drawing.Point(103, 88);
             this.InvestmentNameLabel.Name = "InvestmentNameLabel";
-            this.InvestmentNameLabel.Size = new System.Drawing.Size(63, 24);
+            this.InvestmentNameLabel.Size = new System.Drawing.Size(70, 24);
             this.InvestmentNameLabel.TabIndex = 13;
             this.InvestmentNameLabel.Text = "Name";
             // 
             // NameTextBox
             // 
-            this.NameTextBox.Location = new System.Drawing.Point(178, 83);
+            this.NameTextBox.Location = new System.Drawing.Point(191, 85);
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(188, 32);
+            this.NameTextBox.Size = new System.Drawing.Size(214, 30);
             this.NameTextBox.TabIndex = 12;
             // 
             // TypeLabel
@@ -270,16 +276,16 @@ namespace InvestmentLibrary
             this.TypeLabel.AutoSize = true;
             this.TypeLabel.Location = new System.Drawing.Point(11, 42);
             this.TypeLabel.Name = "TypeLabel";
-            this.TypeLabel.Size = new System.Drawing.Size(155, 24);
+            this.TypeLabel.Size = new System.Drawing.Size(174, 24);
             this.TypeLabel.TabIndex = 7;
             this.TypeLabel.Text = "Investment type";
             // 
             // InvestemntTypeComboBox
             // 
             this.InvestemntTypeComboBox.FormattingEnabled = true;
-            this.InvestemntTypeComboBox.Location = new System.Drawing.Point(178, 40);
+            this.InvestemntTypeComboBox.Location = new System.Drawing.Point(191, 42);
             this.InvestemntTypeComboBox.Name = "InvestemntTypeComboBox";
-            this.InvestemntTypeComboBox.Size = new System.Drawing.Size(188, 32);
+            this.InvestemntTypeComboBox.Size = new System.Drawing.Size(214, 32);
             this.InvestemntTypeComboBox.TabIndex = 5;
             // 
             // DataSourceLabel
@@ -287,31 +293,32 @@ namespace InvestmentLibrary
             this.DataSourceLabel.AutoSize = true;
             this.DataSourceLabel.Location = new System.Drawing.Point(45, 128);
             this.DataSourceLabel.Name = "DataSourceLabel";
-            this.DataSourceLabel.Size = new System.Drawing.Size(121, 24);
+            this.DataSourceLabel.Size = new System.Drawing.Size(136, 24);
             this.DataSourceLabel.TabIndex = 11;
             this.DataSourceLabel.Text = "Data Source";
             // 
             // DataSourceTextBox
             // 
-            this.DataSourceTextBox.Location = new System.Drawing.Point(178, 126);
+            this.DataSourceTextBox.Location = new System.Drawing.Point(191, 128);
             this.DataSourceTextBox.Name = "DataSourceTextBox";
-            this.DataSourceTextBox.Size = new System.Drawing.Size(188, 32);
+            this.DataSourceTextBox.Size = new System.Drawing.Size(214, 30);
             this.DataSourceTextBox.TabIndex = 10;
             // 
             // ValueLabel
             // 
             this.ValueLabel.AutoSize = true;
-            this.ValueLabel.Location = new System.Drawing.Point(137, 193);
+            this.ValueLabel.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ValueLabel.Location = new System.Drawing.Point(152, 193);
             this.ValueLabel.Name = "ValueLabel";
-            this.ValueLabel.Size = new System.Drawing.Size(52, 24);
+            this.ValueLabel.Size = new System.Drawing.Size(57, 24);
             this.ValueLabel.TabIndex = 9;
             this.ValueLabel.Text = "Rate";
             // 
             // RateTextBox
             // 
-            this.RateTextBox.Location = new System.Drawing.Point(195, 193);
+            this.RateTextBox.Location = new System.Drawing.Point(215, 190);
             this.RateTextBox.Name = "RateTextBox";
-            this.RateTextBox.Size = new System.Drawing.Size(188, 32);
+            this.RateTextBox.Size = new System.Drawing.Size(188, 30);
             this.RateTextBox.TabIndex = 8;
             // 
             // CreateTypeGroupBox
@@ -319,7 +326,7 @@ namespace InvestmentLibrary
             this.CreateTypeGroupBox.Controls.Add(this.TypeNameTextBox);
             this.CreateTypeGroupBox.Controls.Add(this.AddTypeButton);
             this.CreateTypeGroupBox.Controls.Add(this.TypeNameLabel);
-            this.CreateTypeGroupBox.Location = new System.Drawing.Point(50, 424);
+            this.CreateTypeGroupBox.Location = new System.Drawing.Point(63, 416);
             this.CreateTypeGroupBox.Name = "CreateTypeGroupBox";
             this.CreateTypeGroupBox.Size = new System.Drawing.Size(353, 166);
             this.CreateTypeGroupBox.TabIndex = 6;
@@ -328,63 +335,68 @@ namespace InvestmentLibrary
             // 
             // TypeNameTextBox
             // 
+            this.TypeNameTextBox.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.TypeNameTextBox.Location = new System.Drawing.Point(135, 49);
             this.TypeNameTextBox.Name = "TypeNameTextBox";
-            this.TypeNameTextBox.Size = new System.Drawing.Size(180, 32);
+            this.TypeNameTextBox.Size = new System.Drawing.Size(194, 30);
             this.TypeNameTextBox.TabIndex = 1;
             // 
             // AddTypeButton
             // 
-            this.AddTypeButton.Location = new System.Drawing.Point(91, 100);
+            this.AddTypeButton.BackColor = System.Drawing.Color.LightGray;
+            this.AddTypeButton.Location = new System.Drawing.Point(105, 100);
             this.AddTypeButton.Name = "AddTypeButton";
             this.AddTypeButton.Size = new System.Drawing.Size(142, 50);
             this.AddTypeButton.TabIndex = 2;
             this.AddTypeButton.Text = "Create type";
-            this.AddTypeButton.UseVisualStyleBackColor = true;
+            this.AddTypeButton.UseVisualStyleBackColor = false;
             this.AddTypeButton.Click += new System.EventHandler(this.AddTypeButton_Click);
             // 
             // TypeNameLabel
             // 
             this.TypeNameLabel.AutoSize = true;
+            this.TypeNameLabel.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.TypeNameLabel.Location = new System.Drawing.Point(6, 52);
             this.TypeNameLabel.Name = "TypeNameLabel";
-            this.TypeNameLabel.Size = new System.Drawing.Size(106, 24);
+            this.TypeNameLabel.Size = new System.Drawing.Size(121, 24);
             this.TypeNameLabel.TabIndex = 0;
             this.TypeNameLabel.Text = "Type name";
             // 
             // MyInvestmentNameLabel
             // 
             this.MyInvestmentNameLabel.AutoSize = true;
-            this.MyInvestmentNameLabel.Location = new System.Drawing.Point(126, 89);
+            this.MyInvestmentNameLabel.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.MyInvestmentNameLabel.Location = new System.Drawing.Point(139, 92);
             this.MyInvestmentNameLabel.Name = "MyInvestmentNameLabel";
-            this.MyInvestmentNameLabel.Size = new System.Drawing.Size(63, 24);
+            this.MyInvestmentNameLabel.Size = new System.Drawing.Size(70, 24);
             this.MyInvestmentNameLabel.TabIndex = 4;
             this.MyInvestmentNameLabel.Text = "Name";
             // 
             // InvValueLabel
             // 
             this.InvValueLabel.AutoSize = true;
-            this.InvValueLabel.Location = new System.Drawing.Point(46, 141);
+            this.InvValueLabel.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.InvValueLabel.Location = new System.Drawing.Point(44, 144);
             this.InvValueLabel.Name = "InvValueLabel";
-            this.InvValueLabel.Size = new System.Drawing.Size(143, 24);
+            this.InvValueLabel.Size = new System.Drawing.Size(165, 24);
             this.InvValueLabel.TabIndex = 2;
             this.InvValueLabel.Text = "Invested (PLN)";
             // 
             // InvValueTextBox
             // 
-            this.InvValueTextBox.Location = new System.Drawing.Point(195, 141);
+            this.InvValueTextBox.Location = new System.Drawing.Point(215, 141);
             this.InvValueTextBox.Name = "InvValueTextBox";
-            this.InvValueTextBox.Size = new System.Drawing.Size(188, 32);
+            this.InvValueTextBox.Size = new System.Drawing.Size(188, 30);
             this.InvValueTextBox.TabIndex = 1;
             // 
             // AddInvestmentLabel
             // 
             this.AddInvestmentLabel.AutoSize = true;
-            this.AddInvestmentLabel.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.AddInvestmentLabel.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.AddInvestmentLabel.ForeColor = System.Drawing.Color.Navy;
-            this.AddInvestmentLabel.Location = new System.Drawing.Point(332, 19);
+            this.AddInvestmentLabel.Location = new System.Drawing.Point(344, 19);
             this.AddInvestmentLabel.Name = "AddInvestmentLabel";
-            this.AddInvestmentLabel.Size = new System.Drawing.Size(216, 33);
+            this.AddInvestmentLabel.Size = new System.Drawing.Size(254, 32);
             this.AddInvestmentLabel.TabIndex = 0;
             this.AddInvestmentLabel.Text = "New inwestment";
             // 
@@ -396,7 +408,7 @@ namespace InvestmentLibrary
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.MintCream;
-            this.ClientSize = new System.Drawing.Size(883, 595);
+            this.ClientSize = new System.Drawing.Size(944, 595);
             this.Controls.Add(this.startPanel);
             this.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Navy;

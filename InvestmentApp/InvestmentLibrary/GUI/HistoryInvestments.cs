@@ -30,8 +30,16 @@ namespace InvestmentLibrary
                 sum += iv.Difference;
                 sumInvested += iv.ValuePurchased;
             }
-            percent = 100 - (100 * (sumInvested + sum) / sumInvested);
-            this.HistoryValueLabel.Text = ($"{sum} ({percent}%)");
+            percent = (100 * (sumInvested + sum) / sumInvested) - 100;
+            this.HistoryValueLabel.Text = ($"{sum.ToString("0.00")} ({percent.ToString("0.00")}%)");
+            if(sum > 0)
+            {
+                this.HistoryValueLabel.ForeColor = Color.Green;
+            }
+            else
+            {
+                this.HistoryValueLabel.ForeColor = Color.Red;
+            }
         }
     }
 }
