@@ -5,7 +5,7 @@
 In todays world investing in precious metals and stock become very popular. This project was created to help my friend in managing his investitions in simple way. Application helps with all math work needed in caluclating current profit (e.g cheks currency rates, actual investments rates and calulates them including info about user's amount of current stock). Project also shows various stats about user's inwestment pocket.
 
 # Technologies 
-Project was creater in usage of Windows Forms
+Project was created in usage of Windows Forms
 * C# 9.0
 * MySQL 8.0.19
 * Dapper 2.0.78
